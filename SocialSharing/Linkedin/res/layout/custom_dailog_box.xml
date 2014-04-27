@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <EditText
+        android:id="@+id/text"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp" >
+    </EditText>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text"
+        android:orientation="horizontal"
+        android:weightSum="1.0" >
+
+        <Button
+            android:id="@+id/dialogButtonOK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:text=" Share " />
+
+        <Button
+            android:id="@+id/dialogButtonCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/dialogButtonOK"
+            android:text=" Cancel " />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btnfb"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0"
+        android:drawableLeft="@drawable/fbpng"
+        android:text="Facebook"
+        android:orientation="horizontal"
+        android:weightSum="1.0" />
+        
+        <Button
+            android:id="@+id/btntwtr"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.0"
+            android:orientation="horizontal"
+            android:drawableLeft="@drawable/twitterpng"
+            android:text="Twitter"
+            android:weightSum="1.0" >
+
+           <!--  <ImageView
+                android:id="@+id/imgrow2"
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:fontFamily="ARIAL"
+                android:src="@drawable/default_2" />
+
+            <TextView
+                android:id="@+id/txtrow2"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:fontFamily="ARIAL"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="0.8"
+                android:paddingTop="10dp"
+                android:text="Search"
+                android:textColor="#ffffff"
+                android:textSize="16sp" /> -->
+        </Button>
+        
+        <Button
+            android:id="@+id/btnlinked"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.0"
+            android:orientation="horizontal"
+            android:drawableLeft="@drawable/linkedpng"
+            android:text="Linked-In"
+            android:weightSum="1.0" >
+
+           <!--  <ImageView
+                android:id="@+id/imgrow3"
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:fontFamily="ARIAL"
+                android:src="@drawable/default_2" />
+
+            <TextView
+                android:id="@+id/txtrow3"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:fontFamily="ARIAL"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="0.8"
+                android:paddingTop="10dp"
+                android:text="Setting"
+                android:textColor="#ffffff"
+                android:textSize="16sp" /> -->
+        </Button>
+        
+        <Button
+            android:id="@+id/btngoogleplus"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.0"
+            android:orientation="horizontal"
+            android:drawableLeft="@drawable/gpluspng"
+            android:text="Google+"
+            android:weightSum="1.0" >
+
+           <!--  <ImageView
+                android:id="@+id/imgrow4"
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:fontFamily="ARIAL"
+                android:src="@drawable/default_2" />
+
+            <TextView
+                android:id="@+id/txtrow4"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:fontFamily="ARIAL"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="0.8"
+                android:paddingTop="10dp"
+                android:text="How"
+                android:textColor="#ffffff"
+                android:textSize="16sp" /> -->
+        </Button>
+        
+        
+    
+        
+
+</LinearLayout>
