@@ -1,5 +1,7 @@
 package com.dssunny.share;
-
+/*
+ * created by deepak sharma
+ */
 import java.util.Arrays;
 import java.util.List;
 
@@ -64,14 +66,7 @@ public class FcebookActivity extends FragmentActivity {
 		});
 
 		postImageBtn = (Button) findViewById(R.id.post_image);
-		/*postImageBtn.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View view) {
-				postImage();
-			}
-		});
-*/
+	
 		updateStatusBtn = (Button) findViewById(R.id.update_status);
 		updateStatusBtn.setOnClickListener(new OnClickListener() {
 
@@ -79,38 +74,48 @@ public class FcebookActivity extends FragmentActivity {
 			public void onClick(View v) {
 				//postStatusMessage();
 				
+				// Showing a dialog 
 				final Dialog dialog = new Dialog(FcebookActivity.this);
+				// setting a layout of dailog
 				dialog.setContentView(R.layout.custom_dailog_box);
+				// setting a tittle
 				dialog.setTitle("Facebook sharing");
 	 
-				// set the custom dialog components - text, image and button
+				// get the reference of EditText
 				final EditText text = (EditText) dialog.findViewById(R.id.text);
 				text.setText("sample text");
-					 
+				
+				// get the reference of Cancel button
+				
 				Button dialogCancel = (Button) dialog.findViewById(R.id.dialogButtonCancel);
 				dialogCancel.setOnClickListener(new OnClickListener() {
 					
 					@Override
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
+						// dialog the dismiss
 						dialog.dismiss();
+						// showing a toast
 						Toast.makeText(FcebookActivity.this,
 								"cancel dialog",
 								Toast.LENGTH_LONG).show();
 					}
 				});
 				
+				// get the reference of sharing button
 				Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
 				// if button is clicked, close the custom dialog
 				dialogButton.setOnClickListener(new OnClickListener() {
 					@Override
 					public void onClick(View v) {
+						// dismissing the dialog
 						dialog.dismiss();
 						Toast.makeText(FcebookActivity.this,
 								"ok dialog",
 								Toast.LENGTH_LONG).show();
-						
+						// get the text of the edit text
 						message=text.getText().toString();
+						// posting the status on facebook of loginned user 
 						postStatusMessage();
 						
 						
@@ -166,12 +171,15 @@ public class FcebookActivity extends FragmentActivity {
 	}
 */
 	public void postStatusMessage() {
+		// checking for permission
 		if (checkPermissions()) {
+			// creating a request object , apssing a session object and message
 			Request request = Request.newStatusUpdateRequest(
 					Session.getActiveSession(), message,
 					new Request.Callback() {
 						@Override
 						public void onCompleted(Response response) {
+							// call back method , called when status s sucessfully updated
 							if (response.getError() == null)
 								Toast.makeText(FcebookActivity.this,
 										"Status updated successfully",
@@ -185,6 +193,7 @@ public class FcebookActivity extends FragmentActivity {
 	}
 
 	public boolean checkPermissions() {
+		// checking for pession of publish 
 		Session s = Session.getActiveSession();
 		if (s != null) {
 			return s.getPermissions().contains("publish_actions");

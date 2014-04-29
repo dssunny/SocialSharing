@@ -59,6 +59,7 @@ public class LinkedinDialog extends Dialog {
 	 * set webview.
 	 */
 	private void setWebView() {
+		// get the instance by assing a customer key and custoer secret 
 		LinkedinDialog.oAuthService = LinkedInOAuthServiceFactory.getInstance()
 				.createLinkedInOAuthService(Config.LINKEDIN_CONSUMER_KEY,
 						Config.LINKEDIN_CONSUMER_SECRET);

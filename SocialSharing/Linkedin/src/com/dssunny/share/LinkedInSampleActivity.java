@@ -42,7 +42,7 @@ import com.google.code.linkedinapi.client.oauth.LinkedInRequestToken;
 import com.google.code.linkedinapi.schema.Person;
 
 /**
- * @author Mukesh Kumar Yadav
+ * @author Deepak Sharma
  */
 public class LinkedInSampleActivity extends Activity {
 	Button login;
@@ -82,6 +82,7 @@ public class LinkedInSampleActivity extends Activity {
 		login.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				// login with linked in 
 				linkedInLogin();
 			}
 		});
@@ -92,12 +93,12 @@ public class LinkedInSampleActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				
-				
+				// creating an custom dialog 
 				final Dialog dialog = new Dialog(LinkedInSampleActivity.this);
 				dialog.setContentView(R.layout.custom_dailog_box);
 				dialog.setTitle("LinkedIn sharing");
 	 
-				// set the custom dialog components - text, image and button
+				
 				final EditText text = (EditText) dialog.findViewById(R.id.text);
 				text.setText("Sample text");
 					 
@@ -127,8 +128,10 @@ public class LinkedInSampleActivity extends Activity {
 						message=text.getText().toString();
 						postStatusMessage();
 						*/
+						// get the text which is to be shared
 						String share = text.getText().toString();
 						if (null != share && !share.equalsIgnoreCase("")) {
+							// creating an OAuthConsumer object
 							OAuthConsumer consumer = new CommonsHttpOAuthConsumer(Config.LINKEDIN_CONSUMER_KEY, Config.LINKEDIN_CONSUMER_SECRET);
 						    consumer.setTokenWithSecret(accessToken.getToken(), accessToken.getTokenSecret());
 							DefaultHttpClient httpclient = new DefaultHttpClient();
@@ -195,7 +198,7 @@ public class LinkedInSampleActivity extends Activity {
 	private void linkedInLogin() {
 		ProgressDialog progressDialog = new ProgressDialog(
 				LinkedInSampleActivity.this);
-
+// creating a linked n dialog object for authenticating and allow the user to share co=ntent
 		LinkedinDialog d = new LinkedinDialog(LinkedInSampleActivity.this,
 				progressDialog);
 		d.show();
@@ -206,7 +209,7 @@ public class LinkedInSampleActivity extends Activity {
 			public void onVerify(String verifier) {
 				try {
 					Log.i("LinkedinSample", "verifier: " + verifier);
-
+					// get the token 
 					accessToken = LinkedinDialog.oAuthService
 							.getOAuthAccessToken(LinkedinDialog.liToken,
 									verifier);
@@ -217,6 +220,7 @@ public class LinkedInSampleActivity extends Activity {
 							"ln_access_token: " + accessToken.getToken());
 					Log.i("LinkedinSample",
 							"ln_access_token: " + accessToken.getTokenSecret());
+					// get the profile information of login user 
 					Person p = client.getProfileForCurrentUser();
 					name.setText("Welcome " + p.getFirstName() + " "
 							+ p.getLastName());
